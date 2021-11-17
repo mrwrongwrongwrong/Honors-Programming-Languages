@@ -1,0 +1,9 @@
+
+
+In parser.mly:
+Without the %inline keyword, the
+language recognized by the grammar would be the same, but the LR automaton would probably have one
+more state and would perform one more reduction at run time.
+
+
+http://gallium.inria.fr/~fpottier/menhir/manual.pdf

@@ -1,0 +1,14 @@
+This is the way in OCaml to define a "local" variable.
+
+The best way to look at it is that in is not a separate keyword. Instead, there's an expression that looks like let v = expr1 in expr2. 
+This is the way in OCaml to define a "local" variable. What it's saying is that you're going to use v as a named value in expr2, and its value when it appears in expr2 is the value of expr1.
+
+I suspect the only reason this is confusing at all is that there's a different construct in OCaml for defining "global" variables. 
+At the top level of a module you can say let v = expr. This defines a global name that is (in general) exported from the module.
+
+All of the examples you give are of the first kind; that is, they're defining local variables named quit_loop, str, x, and y.
+
+As a matter of syntax, in is mostly acting like punctuation; it allows a parser for the language to tell where expr1 stops and expr2 begins. 
+This is especially necessary in ML languages, where putting two expressions next to each other has a specific (and very commonly used) meaning.
+
+

@@ -1,0 +1,8 @@
+
+---
+Printf.sprintf
+
+---Convert int to string
+https://stackoverflow.com/questions/9986465/ocaml-how-do-i-convert-int-to-string
+string_of_int
+Printf.sprintf "%d" 42

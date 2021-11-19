@@ -24,3 +24,11 @@ In abstract syntax tree:
 There are two styles: 1.AST 2.BNF
 https://www.youtube.com/watch?v=NQacOvZbbX4&list=PLre5AT9JnKShBOPeuiD9b-I4XROIJhkIU&index=165
 I used BNF in my abstract syntax 
+
+
+Small step & multi-step & Big step
+https://www.youtube.com/watch?v=P456qGgeoYs&list=PLre5AT9JnKShBOPeuiD9b-I4XROIJhkIU&index=167
+small step : just one step, such as (5+2) + 3 = (7) + 3
+
+multi step: multiple small steps
+Big step: in ideal case, the big step and multi step are interchangable, meaning that the big step can be derived from multi step

@@ -1,0 +1,24 @@
+
+What does "let () = " mean in Ocaml?
+https://stackoverflow.com/questions/7524487/what-does-let-mean-in-ocaml
+let () = print_string "something" in
+fn
+
+There's nothing special about () in this let expression, it's just a pattern. All let expressions look like let pattern = expression in other-expression. 
+Here the pattern will always match, because print_string returns unit, and () is the only value of that type. 
+In this way, it's just another way of combining two expressions into one when the first one is really more of a statement (returns unit).
+
+So you're right, the construct has pretty much the same meaning as using the ; operator. The only real difference is in the precedence. If, for example, you write
+
+if x < 3 then
+    print_string "something";
+    f x
+you would find that f x is always called. The precedence of ; is too low to pull the second expression under the control of the if. 
+That's the reason many people (including me) get into the habit of using let () = expression. If you write the above as
+
+if x < 3 then
+    let () = print_string "something"
+    in f x
+the f x is only called when x is less than 3, which is usually what I want. In essence, the precedence of let is much higher than ;.
+
+Of course there are may other ways to get this effect, but the nice thing about using let is that you don't have to add anything later on in the code (like a closing parenthesis or an end). If you're adding the print_string as a debugging statement, this is a handy way of keeping the changes local to the one spot.

@@ -1,3 +1,21 @@
 https://www.mrcoder.org/en/compiler/minijava/introduction/
 
 https://www.youtube.com/watch?v=bUJg1vEJXDc&list=PLre5AT9JnKShBOPeuiD9b-I4XROIJhkIU&index=158
+
+https://ocaml.org/manual/lexyacc.html
+        (* File lexer.mll *)
+        {
+        open Parser        (* The type token is defined in parser.mli *)
+        exception Eof
+        }
+        rule token = parse
+            [' ' '\t']     { token lexbuf }     (* skip blanks *)
+          | ['\n' ]        { EOL }
+          | ['0'-'9']+ as lxm { INT(int_of_string lxm) }
+          | '+'            { PLUS }
+          | '-'            { MINUS }
+          | '*'            { TIMES }
+          | '/'            { DIV }
+          | '('            { LPAREN }
+          | ')'            { RPAREN }
+          | eof            { raise Eof }

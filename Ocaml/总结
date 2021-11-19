@@ -3,12 +3,24 @@
 
 1.Parser.mly
 用parser.mly 生成parser.ml
-
-在Parser.mly里面
-step1:
+https://www.youtube.com/watch?v=-BBbgVhj66s
+------在Parser.mly里面
+---step1: Declaration 
 先定义token
 %token <int> INT
 %token TIMES
 %token LPAREN
 %token RPAREN
 %token EOF
+
+---step2:
+定义assocativity:
+%left PLUS
+%left TIMES
+
+
+
+In abstract syntax tree:
+There are two styles: 1.AST 2.BNF
+https://www.youtube.com/watch?v=NQacOvZbbX4&list=PLre5AT9JnKShBOPeuiD9b-I4XROIJhkIU&index=165
+I used BNF in my abstract syntax 

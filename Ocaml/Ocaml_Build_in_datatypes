@@ -1,0 +1,161 @@
+https://www2.lib.uchicago.edu/keith/ocaml-class/data.html
+Built-In Data Types
+The OCaml Core Library defines something like eighteen data types (there are many more in the Standard Library).
+
+Core Data Types
+int	Integer numbers
+float	Floating-point numbers
+char	Characters
+string	Character strings
+bool	Booleans
+unit	Unit values
+tuples	Pairs, etc
+list	Lists
+array	Arrays
+exn	Exceptions
+format	printf formats
+functions	Functions
+option	Optional values
+records	Records (structs)
+ref	References
+variants	User-defined types
+polymorphic variants	Mysterious!
+objects	Instances of classes
+int — Integers
+OCaml supports fixed-length integers two bits smaller than native machine integers — 30 bits on most machines (62 bits on some). The standard library also has modules for 32-bit and 64-bit integers that are usable on any machine; besides being bigger, these can be useful when interfacing with C or when using data that comes from other languages. The num library defines arbitrary-precision rational numbers. The range of integers is -230 to 230-1 (or -262 to 262-1).
+
+Integers literals are written in the usual notation, e.g. 1, 2, -3567. Underscore characters are accepted (and ignored) within integer literals, e.g. 1_073_741_823 is the maximum 30-bit integer. Integers are of course written in base 10 by default but can be written in base 2, 8 or 16 as follows: 16 = 0b10000 = 0o20 = 0x10. N.B. each of these prefixes begins with a zero, and the octal prefix is a zero followed by a lowercase letter "o"; in each case the letter in the prefix (b, o, x) can be given in uppercase as well (B, O, X).
+
+float — Floating-Point Numbers
+Floats are IEEE 754 with a 53-bit mantissa and exponents from -1022 to 1023. Floating point literals are written in the usual way e.g. 1.34713723849427667e+177 but note that while either the mantissa or the exponent may be omitted, you can't omit both, and if you omit the exponent, you must give a decimal point to avoid what would be an ambiguity with integer literals: 1. = 1e0 = 1.0e0 but not 1, which is an integer. Because of the way the floating-point arithmetic operators are written, I recommend writing floats simple floats with a zero exponent rather than a trailing decimal point.
+
+char — Characters
+Characters are ISO-8859-1 (ISO Latin 1) values (not Unicode values; the third-party Camomile package provides Unicode capability). Character literals are written in single-quotes with the usual Unixy backslash escapes, e.g. 'a', '\n'.
+
+string — Character Strings
+Characters strings are strings of up to 224-6 or 16,777,211 characters (257-9 on 64-bit platforms). String literals are written in double-quotes with the same backslash escapes as used for character literals, e.g. "", "foo", "tabbed\tdata\twith\ttrailing\tnewline\n". A very unusual escape is a backslash followed by a newline followed by whitespace -- the whole of which is simply ignored. This allows you to neatly line up text in string literals within indented code:
+
+    # let str = "tabbed\
+	\tdata\
+	\twith\
+	\ttrailing\
+	\tnewline\
+	\n"
+      ;;
+    val str : string = "tabbed\tdata\twith\ttrailing\tnewline\n"
+    #
+Strings are very unusual in OCaml in that they are mutable data structures. Here's an example of changing one of the characters of a string:
+
+    # let str = "foo" in str.[0] <- 'z'; str;;
+    - : string = "zoo"
+    #
+Note that variable str is immutable in the above; it's the string that it's bound to that's mutable! Efficient strings are so important for the efficiency of so many programs that each character of an OCaml string is actually a reference; see References below.
+
+When working with strings, keep the Standard Library's Buffer module in mind; it provides extensible string buffers with efficient (quasi-linear) concatenation, whereas concatenation of strings has quadratic performance.
+
+bool — Booleans
+The two Boolean literals are true and false.
+
+unit — The Unit Value
+The unit type consists of exactly one value, written (). What's the point of such a type? Well, it's used to represent the type of expressions that have "no value", i.e. expressions that are evaluated for a side-effect only. The built-in printing functions return type unit, for example; the value of a while or for loop (both of which are expressions, not "statements") is also of type unit. OCaml uses this convention to help catch more type errors.
+
+Some of the built-in types are not types per se but rather families of types, or compound types, or type constructors. Tuples, lists, arrays, records, functions, objects and variants are of this sort. There is no value that is simply a tuple; rather, a given tuple might be an int * char * int tuple, which is different from an int * string tuple. Likewise, no value is just a list; rather, there are int lists, string lists, etc. We will sometimes informally refer to e.g. type list when we mean "types of any type of list".
+Tuples
+OCaml gives you n-tuples (for n from 2 to 222-1 (4,194,303)) as simple aggregate values. A 2-tuple is often called a pair. An n-tuple literal is constructed from n expressions separated by commas. The elements of a tuple need not all be of the same type, and the type of a tuple takes its cardinality and the typing of its elements (and their order) into account. For example, this tuple of two integers 12, 61 has a different type than this tuple of three integers 7, 8, 9. Likewise, this 2-tuple 2, "foo" has a different type than this one: "foo", 2. You will frequently see tuples with parentheses around them (1,2) but note that the parens are not part of the syntax of tuples, but rather are just being used for disambiguation.
+
+list — Lists
+One of the most important data types in OCaml (as in most languages) is the type of lists. OCaml lists are homogenous arbitrary-length sequences of data, with the classic Lisp implementation characteristics (e.g. O(1) "cons" , O(n) "length"). List literals are written in square brackets with elements (which are of course expressions) separated by semicolons, e.g. [1;2;3], ["foo";"bar";"baz"]; the empty list is written []. Lists can also be constructed via the infix right-associative :: operator, so that [1;2] = 1::2::[].
+
+Syntax aside, OCaml lists are completely familiar to Lisp programmers except for one thing: the homogeneity of OCaml lists. All elements of a list must be of the same type. This list is not valid and won't get past the type checker: [1;"foo"; 3].
+
+This restriction is very easy to live with, especially when you consider that it allows the type checker to detect a very large class of bugs. Frequently when Lispers use a list of mixed types, they are simulating a record; in OCaml, you can just use a tuple or an actual record for this. In the case that you really do want a list where any element could have any of several types, you can use a list of tuples [1,"foo";2,"bar"], a list of records, or a list of variants. Remember, too, that while any given list is homogenous, OCaml lets you define functions over lists that are polymorphic, i.e., which will work with lists of any type. (The polymorphism of functions is completely general and not restricted to lists!)
+
+array — Arrays
+Arrays are variable-sized sequences of up to 222-1 (254-1 on 64-bit platforms) elements of the same type. OCaml arrays are like the "lists" of Perl and Tcl and have the same performance characteristics (e.g. O(1) access to elements, O(1) "length"). The size of an array is not part of its type, but the types of its elements are. Of course you can have an array of arrays and simulate matrices the way you do in Tcl and Perl. Array literals are written as a sequence of expressions, separated by semicolons, between the special brackets [| and |], e.g. [|1;2;3|].
+
+The Standard Library also has a Bigarray module that defines true multidimensional arrays of arbitrary size which are limited to elements of type int or float. They support certain high-level operations (like slicing and extracting subarrays) very efficiently.
+
+exn — Exceptions
+See Exception Handling for details.
+
+format — printf Formats
+C's printf function is an example of a wildly successful programming meme: something like it appears in practically every language defined after C. Unfortunately, printf poses a problem for a strongly, statically typed language like OCaml. The problem being, what is the type of printf when the type of its arguments depends on the value of one of its arguments (the format string)? OCaml solves this with a special type for format strings. I must say I don't know if this is a hole in the type system or a clever and legitimate way to solve the problem! Fortunately you don't really need to worry about this, because typical use of printf is straightforward and you'd never suspect anything sophisticated is going on (unless you try to partially apply it -- that'll introduce you to some of the subtleties of the type system very quickly! But the FAQ has the answers you need.)
+
+Functions
+In any functional language, one of the most important types of data is the function. Functions can be stored in data structures, passed to functions and returned as the result of functions, and computed dynamically. Functions are constructed by the fun operator (though there are several alternative notations!), which takes a formal parameter and an expression as the body of the function, e.g. fun n -> n + 1, which is the function that adds one to an integer. fun is one of OCaml's two forms of lambda expression's. A function's type is determined by the types of its argument and return value. Here's a list of functions:
+
+    # [(fun n->n+1);(fun n->n*2)];
+      ;;
+    - : (int -> int) list = [<fun>; <fun>]
+    #
+but this list is invalid because the functions don't have the same type:
+
+    # [(fun n->n+1);(fun n m->n+m)];;
+    This function expects too many arguments, it should have type int -> int
+    #
+Don't worry about the fact that fun takes only a single parameter — while technically OCaml only has unary functions, this is really only a theoretical concern: there are two mechanisms for defining functions that, to all appearances, take multiple arguments.
+
+option — Optional Values
+This is a simple type that could easily be left to each programmer to define for himself, but it's so useful that it's defined in the Core Library. It's used for the common situation where you want to have a data structure that either contains some value, or doesn't; the option type expresses this. Likewise, sometimes you want to define a function that either returns some value or doesn't (indicating an out-of-band value like end-of-file); you can use exception handling for this case, but sometimes it works better to have the function return an option. In fact the option type is sort of the dual of exceptions: the former works in value space and the latter in control space. Since the option type is really just a variant type, we will discuss it in User-Defined Types.
+
+Records
+Records are like the struct's of C; they are like OCaml tuples except that their components are labelled. This means that their type is independent of any ordering. Records can have up to 222-1 fields. Record literals are written like so: {foo = 1; bar = "yikes"} but record types must defined with a type declaration before use. Records are particularly important in OCaml when doing imperative programming. See User-Defined Types for more information.
+
+ref — References
+As a functional language, most OCaml data structures are immutable and can't be modified after they are created. For example, OCaml lists don't support an operation to change the value of the head or tail of the list (like RPLACA and RPLACD or SETF in Lisp, or lset in Tcl). However, OCaml gives you the tools to create such mutable data structures yourself by building them out of references. You can think of a ref as a high-level abstraction of the notion of a memory location, or of a C-style pointer. References are constructed by applying the ref operator to a value of any type, e.g. ref 0 is an int ref and ref [] is a list ref. Thus, you can't create a ref without initializing it.
+
+If you have, say, an int ref you can't add it to an int, because those two things are of different types and the integer addition operator doesn't work on int ref's:
+
+    # ref 1 + 1;;
+    This expression has type int ref but is here used with type int
+    #
+To add those two integers to get 2, you need to dereference the int ref with the prefix ! operator:
+
+    # !(ref 1) + 1;;
+    - : int = 2
+    #
+This looks strange, but only because references are instead usually bound to a variable or used as a (mutable) component of another data structure:
+
+    # let n = ref 1 in !n + 1;;
+    - : int = 2
+    #
+While it's important to be able to dereference a ref, the whole point is to modify it; this is done with the infix := operator:
+
+    # let n = ref 1 in
+	n := !n + 1;
+	n
+      ;;
+    - : int ref = {contents = 2}
+    #
+So while OCaml, in its guise as a functional language, doesn't let you modify variables (like n above), it does let you bind a variable to a ref and then modify that ref! Far from being an arbitrary distinction, this way of looking at things has two benefits:
+
+it allows the type-checker to catch more errors by making a type-distinction between mutable and immutable values, as opposed to mutable and immutable variables (and of course this allows the compiler to generate faster code)
+it allows you to distinguish between, say, an int list ref, where you can change the list that's in the ref but can't change the integers in that list, and an int ref list, where you can change the elements but not the list; this fine-grained type distinction again allows more errors to be caught and faster code to be generated
+Here's an example of the types of lists described above; if you're reading this tutorial linearly some of this may be puzzling:
+
+    # let a = ref [0] and b = [ref 0];;
+    val a : int list ref = {contents = [0]}
+    val b : int ref list = [{contents = 0}]
+    # a := [2;3];;
+    - : unit = ()
+    # a;;
+    - : int list ref = {contents = [2; 3]}
+    # b := [2;3];;
+    This expression has type int ref list but is here used with type 'a ref
+    # List.hd b;;
+    - : int ref = {contents = 0}
+    # List.hd b := 12;;
+    - : unit = ()
+    # b;;
+    - : int ref list = [{contents = 12}]
+    # List.hd a := 100;;
+    This expression has type int list ref but is here used with type 'a list
+    #
+Variants
+Variants construct unions of types; see User-Defined Types for details.
+
+Polymorphic Variants
+I have no idea what polymorphic variants are.
+
+Objects
+See The Object System for details.

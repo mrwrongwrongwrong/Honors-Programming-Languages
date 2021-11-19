@@ -1,0 +1,5 @@
+# Printf.sprintf ("Foo %d" ^^ " %s") 2 "bar";;
+- : string = "Foo 2 bar"
+
+Inside of (), you need to use ^^ for concatenation
+https://stackoverflow.com/questions/10406493/ocaml-printf-sprintf

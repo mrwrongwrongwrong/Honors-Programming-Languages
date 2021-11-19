@@ -1,0 +1,14 @@
+
+
+
+1.Parser.mly
+用parser.mly 生成parser.ml
+
+在Parser.mly里面
+step1:
+先定义token
+%token <int> INT
+%token TIMES
+%token LPAREN
+%token RPAREN
+%token EOF

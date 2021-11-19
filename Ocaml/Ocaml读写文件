@@ -1,0 +1,7 @@
+https://ocaml.org/learn/tutorials/file_manipulation.zh.html
+文件操作
+这是一篇讲解只用OCaml标准库中提供的操作来实现基本文件操作的指南。
+
+请看官方模块文档:Pervasives, Printf.
+
+标准库不提供可以直接读取文件成字符串或保存字符串到文件中的函数。这样的函数可以在第三方类如Extlib找到. 请见 Std.input_file与 Std.output_file.

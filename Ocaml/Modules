@@ -7,3 +7,10 @@ Module Set
 # let s = SS.empty;;
 # let s = SS.singleton "hello";;
 
+2.Stack
+https://ocaml.org/api/Stack.html
+Module Stack
+module Stack: sig .. end
+Last-in first-out stacks.
+
+This module implements stacks (LIFOs), with in-place modification.

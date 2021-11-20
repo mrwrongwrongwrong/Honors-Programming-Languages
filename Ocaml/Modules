@@ -1,0 +1,9 @@
+
+1.Set
+https://ocaml.org/learn/tutorials/set.html
+Set
+Module Set
+# module SS = Set.Make(String);;
+# let s = SS.empty;;
+# let s = SS.singleton "hello";;
+

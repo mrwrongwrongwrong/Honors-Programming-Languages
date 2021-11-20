@@ -32,3 +32,23 @@ small step : just one step, such as (5+2) + 3 = (7) + 3
 
 multi step: multiple small steps
 Big step: in ideal case, the big step and multi step are interchangable, meaning that the big step can be derived from multi step
+
+------在parser.ml 里面
+结构是这样子的：
+open XXX; (*打开你的文档/module*)
+
+module xxx= xxx;
+
+let rec mother_function x0 = helper_function_1 x0 x1
+and
+let helper_function_1 x0 x1 =
+...
+and 
+let helper_function_2 x2 x1 = 
+...
+and 
+let helper_function_3 x3 x1 =
+...
+
+let static_check = mother_function (*rename the mother_function as static_check*)
+(*Hence, you will be able to call this function as Staticsemantic.static_check in another file*)

@@ -34,3 +34,12 @@ let read_whole_channel chan =
     loop ()
   with
     End_of_file -> Buffer.contents buf;;
+   
+  ---下面的代码完全合法（并且都是作同样一件事）：
+  let f x b y = if b then x+y else x+0
+let f x b y = x + (if b then y else 0)
+let f x b y = x + (match b with true -> y | false -> 0)
+let f x b y = x + (let g z = function true -> z | false -> 0 in g y b)
+let f x b y = x + (let _ = y + 3 in (); if b then y else 0)
+
+

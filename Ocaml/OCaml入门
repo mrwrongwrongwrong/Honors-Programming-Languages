@@ -69,3 +69,8 @@ https://ocaml.org/learn/tutorials/data_types_and_matching.html
 ---函数式编程
 什么是函数式编程
 https://ocaml.org/learn/tutorials/functional_programming.zh.html
+
+---可以使用try…with构造来捕获异常：
+https://runebook.dev/zh-CN/docs/ocaml/coreexamples
+  # let name_of_binary_digit digit = try List.assoc digit [0, "zero"; 1, "one"] with Not_found -> "not a binary digit";; val name_of_binary_digit : int -> string = <fun>  # name_of_binary_digit 0;; - : string = "zero"  # name_of_binary_digit (-1);; - : string = "not a binary digit" 
+

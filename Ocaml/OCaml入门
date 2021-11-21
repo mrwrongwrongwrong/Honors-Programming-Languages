@@ -65,3 +65,7 @@ We can use records directly in the data type instead to label our components:
     | Mix of {proportion : float; c1 : colour; c2 : colour};;
 
 https://ocaml.org/learn/tutorials/data_types_and_matching.html
+
+---函数式编程
+什么是函数式编程
+https://ocaml.org/learn/tutorials/functional_programming.zh.html

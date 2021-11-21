@@ -1,1 +1,20 @@
+---
 https://runebook.dev/zh-CN/docs/ocaml/coreexamples
+
+
+---let in
+https://www2.ocaml.org/learn/tutorials/structure_of_ocaml_programs.zh.html
+局部"变量"(实际是局部表达式)
+我们来看C中的average函数并且加一个局部变量。
+
+double average (double a, double b)
+{
+  double sum = a + b;
+  return sum / 2;
+}
+现在来对OCaml版本做同样的事：
+
+let average a b =
+  let sum = a +. b in
+  sum /. 2.0;;
+标准短语let name = expression in用来定义一个命名的局部表达式。以后name在这个函数中就可以用来代替expression，直到一个;;结束本代码块。注意我们在in之后并不缩进.只要把let ... in看作是一个整体就可以。

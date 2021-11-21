@@ -18,3 +18,19 @@ let average a b =
   let sum = a +. b in
   sum /. 2.0;;
 标准短语let name = expression in用来定义一个命名的局部表达式。以后name在这个函数中就可以用来代替expression，直到一个;;结束本代码块。注意我们在in之后并不缩进.只要把let ... in看作是一个整体就可以。
+
+---nested function
+现在你明白了吧？嵌套函数在OCaml中是非常有用也是非常常用的。下面是真实代码中的嵌套函数的例子：
+
+let read_whole_channel chan =
+  let buf = Buffer.create 4096 in
+  let rec loop () =
+    let newline = input_line chan in
+    Buffer.add_string buf newline;
+    Buffer.add_char buf '\n';
+    loop ()
+  in
+  try
+    loop ()
+  with
+    End_of_file -> Buffer.contents buf;;

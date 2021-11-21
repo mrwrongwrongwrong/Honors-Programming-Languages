@@ -43,3 +43,25 @@ let f x b y = x + (let g z = function true -> z | false -> 0 in g y b)
 let f x b y = x + (let _ = y + 3 in (); if b then y else 0)
 
 
+---
+Types, just like functions, may be recursively-defined. We extend our data type to allow mixing of colours:
+
+# type colour =
+    | Red
+    | Green
+    | Blue
+    | Yellow
+    | RGB of float * float * float
+    | Mix of float * colour * colour;;
+    
+We can use records directly in the data type instead to label our components:
+
+# type colour =
+    | Red
+    | Green
+    | Blue
+    | Yellow
+    | RGB of {r : float; g : float; b : float}
+    | Mix of {proportion : float; c1 : colour; c2 : colour};;
+
+https://ocaml.org/learn/tutorials/data_types_and_matching.html

@@ -1,0 +1,144 @@
+
+** Conflict (shift/reduce) in state 45.
+** Tokens involved: MINUS DOT
+** The following explanations concentrate on token MINUS.
+** This state is reached from prog after reading:
+
+PROC_DECL VAR COLON expr DOT expr ASSIGN expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+expr LPAREN expr RPAREN 
+(?)
+
+** In state 45, looking ahead at MINUS, reducing production
+** cmd -> expr DOT expr ASSIGN expr
+** is permitted because of the following sub-derivation:
+
+expr MINUS expr // lookahead token appears
+PROC_DECL VAR COLON cmd // lookahead token is inherited
+                    expr DOT expr ASSIGN expr . 
+
+** In state 45, looking ahead at MINUS, shifting is permitted
+** because of the following sub-derivation:
+
+PROC_DECL VAR COLON cmd 
+                    expr DOT expr ASSIGN expr 
+                                         expr . MINUS expr 
+
+** Conflict (shift/reduce) in state 43.
+** Tokens involved: MINUS DOT
+** The following explanations concentrate on token MINUS.
+** This state is reached from prog after reading:
+
+expr DOT expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+(?)
+
+** In state 43, looking ahead at MINUS, shifting is permitted
+** because of the following sub-derivation:
+
+expr DOT expr ASSIGN expr 
+         expr . MINUS expr 
+
+** In state 43, looking ahead at MINUS, reducing production
+** expr -> expr DOT expr
+** is permitted because of the following sub-derivation:
+
+expr LPAREN expr RPAREN 
+expr MINUS expr // lookahead token appears
+expr DOT expr . 
+
+** Conflict (shift/reduce) in state 21.
+** Tokens involved: MINUS DOT
+** The following explanations concentrate on token MINUS.
+** This state is reached from prog after reading:
+
+PROC_DECL VAR COLON VAR ASSIGN expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+expr LPAREN expr RPAREN 
+(?)
+
+** In state 21, looking ahead at MINUS, reducing production
+** cmd -> VAR ASSIGN expr
+** is permitted because of the following sub-derivation:
+
+expr MINUS expr // lookahead token appears
+PROC_DECL VAR COLON cmd // lookahead token is inherited
+                    VAR ASSIGN expr . 
+
+** In state 21, looking ahead at MINUS, shifting is permitted
+** because of the following sub-derivation:
+
+PROC_DECL VAR COLON cmd 
+                    VAR ASSIGN expr 
+                               expr . MINUS expr 
+
+** Conflict (shift/reduce) in state 20.
+** Tokens involved: MINUS DOT
+** The following explanations concentrate on token MINUS.
+** This state is reached from prog after reading:
+
+WHILE expr DOT expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+WHILE boolean cmd 
+      expr EQUALITY expr 
+      (?)
+
+** In state 20, looking ahead at MINUS, shifting is permitted
+** because of the following sub-derivation:
+
+expr DOT expr 
+         expr . MINUS expr 
+
+** In state 20, looking ahead at MINUS, reducing production
+** expr -> expr DOT expr
+** is permitted because of the following sub-derivation:
+
+expr MINUS expr // lookahead token appears
+expr DOT expr . 
+
+** Conflict (shift/reduce) in state 18.
+** Token involved: DOT
+** This state is reached from prog after reading:
+
+expr MINUS expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+cmd EOF 
+(?)
+
+** In state 18, looking ahead at DOT, reducing production
+** expr -> expr MINUS expr
+** is permitted because of the following sub-derivation:
+
+expr DOT expr ASSIGN expr // lookahead token appears
+expr MINUS expr . 
+
+** In state 18, looking ahead at DOT, shifting is permitted
+** because of the following sub-derivation:
+
+expr LPAREN expr RPAREN 
+expr MINUS expr 
+           expr . DOT expr 

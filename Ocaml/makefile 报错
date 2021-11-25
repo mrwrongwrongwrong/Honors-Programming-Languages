@@ -1,0 +1,8 @@
+makefile:1: *** commands commence before first target.  Stop.
+MBPganghinanban:project zhousq$ make all
+makefile:1: *** commands commence before first target.  Stop.
+MBPganghinanban:project zhousq$ make all
+makefile:1: *** commands commence before first target.  Stop.
+MBPganghinanban:project zhousq$ make all
+
+这个错误就是路径不对， 你ls看一下！

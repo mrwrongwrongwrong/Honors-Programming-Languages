@@ -1,0 +1,12 @@
+0. data structure:
+https://www2.lib.uchicago.edu/keith/ocaml-class/data.html
+
+1.if 语句
+https://ocaml.org/learn/tutorials/if_statements_loops_and_recursion.zh.html
+https://ocaml.org/learn/tutorials/if_statements_loops_and_recursion.zh.html
+
+2.print a unit
+https://stackoverflow.com/questions/56432257/how-to-print-a-unit-in-ocaml-beginner
+
+3.Module Format
+https://ocaml.org/api/Format.html#VALstd_formatter

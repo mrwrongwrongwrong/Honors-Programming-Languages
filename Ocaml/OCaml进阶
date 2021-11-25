@@ -10,3 +10,6 @@ https://stackoverflow.com/questions/56432257/how-to-print-a-unit-in-ocaml-beginn
 
 3.Module Format
 https://ocaml.org/api/Format.html#VALstd_formatter
+
+4. 循环
+https://ocaml.org/learn/tutorials/if_statements_loops_and_recursion.zh.html

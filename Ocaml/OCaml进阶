@@ -16,3 +16,6 @@ https://ocaml.org/learn/tutorials/if_statements_loops_and_recursion.zh.html
 
 5.dictionary
 https://stackoverflow.com/questions/13708701/how-to-implement-a-dictionary-as-a-function-in-ocaml
+https://www.cs.umd.edu/class/spring2015/cmsc330/myCode/ocaml_dict.pdf
+在Ocaml中， dictionary其实本质还是list，只不过list里面的element变成了pair
+比如： [(key1,value1),(key2,value2),(key3,value3)]。这就是一个dictionary

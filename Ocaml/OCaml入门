@@ -2,6 +2,9 @@
 https://runebook.dev/zh-CN/docs/ocaml/coreexamples
 http://xahlee.info/ocaml/ocaml_list.html
 
+---match vs if else
+https://stackoverflow.com/questions/7536633/ocaml-pattern-matching-vs-if-else-statements
+
 ---let in
 https://www2.ocaml.org/learn/tutorials/structure_of_ocaml_programs.zh.html
 局部"变量"(实际是局部表达式)

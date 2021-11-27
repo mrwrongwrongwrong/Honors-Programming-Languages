@@ -1,0 +1,12 @@
+     Option是一种新的数据类型。形象的来描述：Option就是一种特殊的List，
+     都是把数据放在一个管子里；然后在管子内部对数据进行各种操作。所以Option的数据操作与List很相似。
+     不同的是Option的管子内最多只能存放一个元素，在这个方面Option的数据操作就比List简单的多，因为使用者不必理会数据元素的位置、顺序。
+     Option只有两种状态：包含一个任何类型的元素或者为空。或者这样讲：一个Option实例包含 0 或 1 个元素；None代表为空，Some(x)代表包含一个任意类型的元素x。
+     和List的两种状态：Nil及Cons很是相似。值得注意的是，这个为空的概念与java的null值有根本的区别：None或Nil值都具有明确的类型而null则可能是任何类型的数据。
+     在java编程里我们通常需要单独附加一些程序来检查、处理null值，而None或Nil代表了一个类型数据的状态，可以直接使用。
+     
+     https://www.cnblogs.com/tiger-xc/p/4336280.html
+     
+     Module Option in Ocaml:
+     https://ocaml.org/api/Option.html
+

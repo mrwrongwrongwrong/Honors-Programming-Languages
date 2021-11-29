@@ -1,0 +1,10 @@
+var a;
+var b;
+a = 1; 
+b = 1;
+while (b < 35) {
+    b = b + a;
+    a = b - a;
+    print(a);
+    print(b);
+};

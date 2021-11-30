@@ -1,0 +1,25 @@
+
+
+\( and \) in linux 5.0 
+https://blog.csdn.net/wangchengming1/article/details/76946412
+
+
+最近在开发过程中，我想删除服务器上的一个jar包，但是这个jar包的名字上带有括号。
+一开始我是这样子删除的：
+
+rm -f HIBIKI_API(1).jar
+1
+但是我却得到下面的一句话:
+
+bash: syntax error near unexpected token `(' 
+1
+然后我谷歌了一下，发现linux5.0之后，是不能带有括号的，这个时候就需要转译了。转译的方法有下面两种：
+
+1.rm -f HIBIKI_API\(1\).jar
+2.rm -f HIBIKI_API"(1)".jar
+1
+2
+这样子转译一下就OK了。
+————————————————
+版权声明：本文为CSDN博主「程铭程铭你快成名」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/wangchengming1/article/details/76946412

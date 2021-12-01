@@ -1,0 +1,18 @@
+var x; 
+{malloc(x); 
+    {
+        x.A = 10;
+        x.B = proc y: 
+            if (y < 5) 
+                x.C = x.A; 
+            else 
+                x.B(y-1);
+            ;
+        ;
+        x.B(10);            
+        print(x);
+        print(x.A);
+        print(x.B);
+        print(x.C);
+    }
+}

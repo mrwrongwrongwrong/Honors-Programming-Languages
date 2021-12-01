@@ -1,0 +1,21 @@
+In terminal, under the root of my folder zhouyue 
+terminate: 
+
+1.
+./main -input var x; x=5; print\(x\);
+
+The reason for \( and \) is due to the feature after linux 5.0 
+
+1.2
+./main -input var h; h=1; print\(h\);
+then press control + D in mac or linux
+
+2. 
+echo "var x;" | ./main -input
+
+3.
+echo "var x; x=5;" | ./main -input 
+
+4.
+./main ./examples/example2.oo 
+

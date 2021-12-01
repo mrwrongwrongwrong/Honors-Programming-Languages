@@ -1,0 +1,8 @@
+var x;
+var y;
+y = proc z:
+y(20);
+x = 3;
+y = 10;
+print(x);
+print(y);

@@ -1,0 +1,5 @@
+var p;
+p = proc y: if (y < 20) p = 99; else p(y - 1);;;
+print(p);
+p(20);
+print(p);

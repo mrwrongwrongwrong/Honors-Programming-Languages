@@ -9,4 +9,4 @@ Execute an example with the instructions from report.pdf
 Such as $ echo "var x; x = 1" | ./main
 
 ### Nov 30th, 2021
-Author: Yue Zhou(yz1268)
+Author: Yue

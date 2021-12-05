@@ -42,3 +42,13 @@ The main deal with OOP is the ability to encapsulate data from outsiders.
 Encapsulation is the ability to hide variables within the class from outside access — which makes it great for security reasons, along with leaky, unwanted or accidental usage. 
 Most programmers using object oriented design say that it is a style of programming that allows you to model real world scenarios much simpler. 
 This allows for a good transition from requirements to code that works like the customer or user wants it to.
+
+---静态语言 动态语言
+静态类型的语言
+如果在编译时知道变量的类型，则语言是静态类型的。对于某些语言来说，这意味着你作为程序员必须指定每个变量的类型（例如：Java，C，C ++）。
+其他语言提供某种形式的类型推断，类型系统能够推导变量的类型（例如：OCaml，Haskell，Scala，Kotlin）
+这里的主要优点是编译器可以进行各种检查，因此很早就发现了很多微不足道的错误。
+
+动态类型的语言
+如果类型与运行时间值相关联，则语言是动态类型的，而不是命名变量/字段/等。
+这意味着你作为一个程序员可以写得更快一点，因为你不必每次指定类型（除非使用静态类型语言和类型推断）。例如：Perl，Ruby，Python

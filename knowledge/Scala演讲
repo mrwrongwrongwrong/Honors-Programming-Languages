@@ -1,0 +1,37 @@
+
+---Functional Programming vs Object Oriented Programming
+When you anticipate a different kind of software evolution:
+
+Object-oriented languages are good when you have a fixed set of operations on things, and as your code evolves, you primarily add new things. 
+This can be accomplished by adding new classes which implement existing methods, and the existing classes are left alone.
+
+Functional languages are good when you have a fixed set of things, and as your code evolves, you primarily add new operations on existing things. 
+This can be accomplished by adding new functions which compute with existing data types, and the existing functions are left alone.
+
+When evolution goes the wrong way, you have problems:
+
+Adding a new operation to an object-oriented program may require editing many class definitions to add a new method.
+
+Adding a new kind of thing to a functional program may require editing many function definitions to add a new case.
+
+This problem has been well known for many years; in 1998, Phil Wadler dubbed it the "expression problem". 
+Although some researchers think that the expression problem can be addressed with such language features as mixins, a widely accepted solution has yet to hit the mainstream.
+https://stackoverflow.com/questions/2078978/functional-programming-vs-object-oriented-programming
+
+---Functinoal Programming
+Functional programming is the form of programming that attempts to avoid changing state and mutable data. 
+In a functional program, the output of a function should always be the same, given the same exact inputs to the function.
+
+Functional programming provides the advantages like efficiency, lazy evaluation, nested functions, bug-free code, parallel programming. 
+In simple language, functional programming is to write the function having statements to execute a particular task for the application. 
+Each small function does its part and only its part. The function can be easily invoked and reused at any point. 
+It also helps the code to be managed and the same thing or statements does not need to be written again and again.
+It allows for very modular and clean code that all works together in harmony.
+
+https://medium.com/@shaistha24/functional-programming-vs-object-oriented-programming-oop-which-is-better-82172e53a526
+
+----Object Oriented Language
+Object oriented programming is a programming paradigm in which you program using objects to represent things you are programming about (sometimes real world things). 
+These objects could be data structures. The objects hold data about them in attributes. 
+The attributes in the objects are manipulated through methods or functions that are given to the object.
+

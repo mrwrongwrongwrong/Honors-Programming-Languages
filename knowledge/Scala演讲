@@ -35,3 +35,10 @@ Object oriented programming is a programming paradigm in which you program using
 These objects could be data structures. The objects hold data about them in attributes. 
 The attributes in the objects are manipulated through methods or functions that are given to the object.
 
+For instance, we might have a Person object that represents all of the data a person would have: weight, height, skin color, hair color, hair length, and so on. 
+Those would be the attributes. Then the person object would also have things that it can do such as: pick box up, put box down, eat, sleep, etc. 
+These would be the functions that play with the data the object stores.
+The main deal with OOP is the ability to encapsulate data from outsiders. 
+Encapsulation is the ability to hide variables within the class from outside access — which makes it great for security reasons, along with leaky, unwanted or accidental usage. 
+Most programmers using object oriented design say that it is a style of programming that allows you to model real world scenarios much simpler. 
+This allows for a good transition from requirements to code that works like the customer or user wants it to.

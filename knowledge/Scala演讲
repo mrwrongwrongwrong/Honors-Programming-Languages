@@ -53,6 +53,19 @@ This allows for a good transition from requirements to code that works like the 
 如果类型与运行时间值相关联，则语言是动态类型的，而不是命名变量/字段/等。
 这意味着你作为一个程序员可以写得更快一点，因为你不必每次指定类型（除非使用静态类型语言和类型推断）。例如：Perl，Ruby，Python
 
+
+---DataType in Scala:
+https://stackoverflow.com/questions/49402200/scala-whats-the-difference-between-any-and-anyref
+https://www.tutorialspoint.com/scala/scala_data_types.htm
+Any is the supertype of all types. Any has two direct subclasses: AnyVal and AnyRef.
+
+AnyVal represents value types. There are nine predefined value types and they are non-nullable: Double, Float, Long, Int, Short, Byte, Char, Unit, and Boolean.
+
+AnyRef represents reference types. All non-value types are defined as reference types. Every user-defined type in Scala is a subtype of AnyRef. String in scala equals to java.lang.String and is the subtype of AnyRef.
+
+Nothing:Nothing is a subtype of every type because the spec says so. 
+https://stackoverflow.com/questions/39081750/scala-nothing-datatype
+
 ---Scala 总结
 
 ---Scala 与其他语言的共同之处

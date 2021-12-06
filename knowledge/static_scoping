@@ -1,0 +1,17 @@
+https://www.geeksforgeeks.org/static-and-dynamic-scoping/
+
+Static and Dynamic Scoping
+Difficulty Level : Medium
+Last Updated : 11 Nov, 2021
+The scope of a variable x in the region of the program in which the use of x refers to its declaration. One of the basic reasons for scoping is to keep variables in different parts of the program distinct from one another. Since there are only a small number of short variable names, and programmers share habits about naming of variables (e.g., I for an array index), in any program of moderate size the same variable name will be used in multiple different scopes.
+Scoping is generally divided into two classes: 
+1. Static Scoping 
+2. Dynamic Scoping
+Static Scoping: 
+Static scoping is also called lexical scoping. In this scoping, a variable always refers to its top-level environment. This is a property of the program text and is unrelated to the run-time call stack. Static scoping also makes it much easier to make a modular code as a programmer can figure out the scope just by looking at the code. In contrast, dynamic scope requires the programmer to anticipate all possible dynamic contexts.
+In most programming languages including C, C++, and Java, variables are always statically (or lexically) scoped i.e., binding of a variable can be determined by program text and is independent of the run-time function call stack. 
+
+Dynamic Scoping: 
+With dynamic scope, a global identifier refers to the identifier associated with the most recent environment and is uncommon in modern languages. In technical terms, this means that each identifier has a global stack of bindings and the occurrence of an identifier is searched in the most recent binding. 
+In simpler terms, in dynamic scoping, the compiler first searches the current block and then successively all the calling functions.
+ 

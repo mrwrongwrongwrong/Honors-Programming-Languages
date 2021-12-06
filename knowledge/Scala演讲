@@ -52,3 +52,9 @@ This allows for a good transition from requirements to code that works like the 
 动态类型的语言
 如果类型与运行时间值相关联，则语言是动态类型的，而不是命名变量/字段/等。
 这意味着你作为一个程序员可以写得更快一点，因为你不必每次指定类型（除非使用静态类型语言和类型推断）。例如：Perl，Ruby，Python
+
+---Scala 总结
+
+---Scala 与其他语言的共同之处
+
+

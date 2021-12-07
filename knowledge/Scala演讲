@@ -74,4 +74,5 @@ https://stackoverflow.com/questions/39081750/scala-nothing-datatype
 implicit, traits
 
 ---traits, abstract class, inheritance 
+a trait must have at least one abstract method
 

@@ -76,3 +76,5 @@ implicit, traits
 ---traits, abstract class, inheritance 
 a trait must have at least one abstract method
 
+---implicit 
+

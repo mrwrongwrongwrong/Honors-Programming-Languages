@@ -4,3 +4,5 @@
 Trait can have both concrete and abstract method
 
 Trait is just an "add on" to a class
+
+however, trait can inherite from class

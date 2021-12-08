@@ -6,3 +6,5 @@ Trait can have both concrete and abstract method
 Trait is just an "add on" to a class
 
 however, trait can inherite from class
+
+moreoever, if a trait inherits from a class A, then another class B if extends with this trait, class B has to have all the attributes and methods from class A.

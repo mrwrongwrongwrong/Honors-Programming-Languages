@@ -8,5 +8,10 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures
 开始复习
 
 
-Knaster–Tarski theorem
-Rice theorem
+---Knaster–Tarski theorem
+https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BA%B3%E6%96%AF%E7%89%B9%EF%BC%8D%E5%A1%94%E6%96%AF%E5%9F%BA%E5%AE%9A%E7%90%86
+1.设 L 是完全格
+2.并设 f : L → L 是次序保持函数。
+结论：则 f 在 L 中的不动点的集合也是完全格。
+
+---Rice theorem

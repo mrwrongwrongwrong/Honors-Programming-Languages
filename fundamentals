@@ -1,0 +1,65 @@
+1.Hoare Logic
+https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%B0%94%E9%80%BB%E8%BE%91
+霍尔逻辑的中心特征是霍尔三元组（Hoare triple）。这种三元组描述一段代码的执行如何改变计算的状态。Hoare三元组有如下形式
+{\displaystyle \{P\}\;C\;\{Q\}}\{P\}\;C\;\{Q\}
+
+
+2.Assertion 
+https://baike.baidu.com/item/%E6%96%AD%E8%A8%80/13021995
+断言可以有两种形式
+1.assert Expression1
+2.assert Expression1:Expression2
+
+3. Semantics
+https://en.wikipedia.org/wiki/Semantics_(computer_science)
+Semantics (computer science)
+semantics is the field concerned with the rigorous mathematical study of the meaning of programming languages.[1] 
+It does so by evaluating the meaning of syntactically valid strings defined by a specific programming language, showing the computation involved. 
+In such a case that the evaluation would be of syntactically invalid strings, the result would be non-computation. 
+Semantics describes the processes a computer follows when executing a program in that specific language.
+
+4. Least Fixed Point
+https://en.wikipedia.org/wiki/Least_fixed_point
+In order theory, a branch of mathematics, the least fixed point (lfp or LFP, sometimes also smallest fixed point) of a function from a partially ordered set to itself is the fixed point which is less than each other fixed point, according to the order of the poset. 
+A function need not have a least fixed point, but if it does then the least fixed point is unique.
+
+Many fixed-point theorems yield algorithms for locating the least fixed point. Least fixed points often have desirable properties that arbitrary fixed points do not.
+
+5. Type Rule
+https://en.wikipedia.org/wiki/Type_rule
+In type theory, a type rule is an inference rule that describes how a type system assigns a type to a syntactic construction. 
+These rules may be applied by the type system to determine if a program is well typed and what type expressions have. 
+ A prototypical example of the use of type rules is in defining type inference in the simply typed lambda calculus, which is the internal language of Cartesian closed categories.
+
+6. Closure:
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures
+一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。
+也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。
+
+7.Semantics()
+Denotational semantics
+https://en.wikipedia.org/wiki/Denotational_semantics
+https://www.google.com/search?q=operational+semantics&sxsrf=AOaemvJFv1-iB6d6ptxRg7HlNrBCjEz1Fw:1639418675836&tbm=isch&source=iu&ictx=1&fir=9KECLOxKOcMiBM%252Ci35YKZRfKcRvzM%252C_%253BG9a1hUhQ65UMlM%252CNMtJ4ei6Lj26rM%252C_%253BbNxtkI6lra4jRM%252CP1U18LPv5p5e1M%252C_%253BJ74XNSFBzMTcDM%252CoP_X4Vj7d4lZbM%252C_%253BAs2lN5UdDro9XM%252CTmO2CixoZYuwiM%252C_%253BNBwj2-aIwGEwLM%252CHQPNgiAtyn870M%252C_&vet=1&usg=AI4_-kRn9emR_MaeZH_UOHTi4QfMZ46DRg&sa=X&ved=2ahUKEwj8pr6-ruH0AhUQlYkEHS7PDJcQ_h16BAgREAE#imgrc=9KECLOxKOcMiBM
+Operational semantics:
+https://en.wikipedia.org/wiki/Operational_semantics
+
+8.Rice Theorem
+https://courses.engr.illinois.edu/cs373/sp2013/Lectures/lec25.pdf
+https://www.youtube.com/watch?v=nP2phzkNzwE
+https://www.youtube.com/watch?v=kr7n_3LpWhc
+
+
+8. Knaster–Tarski theorem
+克纳斯特－塔斯基定理
+https://en.wikipedia.org/wiki/Knaster%E2%80%93Tarski_theorem
+
+1.设:L 是完全格 2.并设 f : L → L 是次序保持函数。
+则 f 在 L 中的不动点的集合也是完全格。
+这个定理的一种逆命题由 Anne C. Davis 证明了: 如果所有次序保持函数 f : L → L 有不动点，则 L 是完全格。
+
+
+如果对于 L 的元素的递升序列的所有 xn 有 f(lim xn)=lim f(xn)，则 f 的最小不动点是 lim fn(0)，这里的 0 是 L 的最小元素，因此给出了这个定理的更有“建设性”的一个版本。
+更一般的说，如果 f 是单调函数，则 f 的最小不动点是 fα(0) 的固定极限
+例如，在理论计算机科学中，单调函数的最小不动点被用来定义程序语义。
+9.
+

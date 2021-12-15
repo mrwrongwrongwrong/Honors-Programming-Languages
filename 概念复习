@@ -44,4 +44,6 @@ expresses that everything in the domain satisfies the property denoted by {\disp
 the existential quantifier {\displaystyle \exists }{\displaystyle \exists } in the formula {\displaystyle \exists xP(x)}{\displaystyle \exists xP(x)} 
 expresses that there is something in the domain which satisfies that property. 
 
----
+---Parametric Polymorphism 
+
+Using parametric polymorphism, a function or a data type can be written generically so that it can handle values identically without depending on their type

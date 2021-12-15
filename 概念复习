@@ -24,3 +24,12 @@ https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BA%B3%E6%96%AF%E7%89%B9%EF%BC%8D%E5%A
 
 对于partial function的任意一个非平凡性质，我们考虑如下问题：是否存在一个通用高效的算法来找到一个具有这样性质的partial function呢？就是用算法来找出具有这样性质的partial function。答案是：不存在这样的算法。这就是莱斯定理。
 https://www.zhihu.com/question/31203118
+
+---Trival / Non Trival Property 平凡和非平凡解
+A property is called to be trivial if either it is not satisfied by any recursively enumerable languages, or if it is satisfied by all recursively enumerable languages. 
+A non-trivial property is satisfied by some recursively enumerable languages and are not satisfied by others.
+https://www.tutorialspoint.com/automata_theory/rice_theorem.htm
+https://www.google.com/search?q=what+is+non-trivial+property&oq=what+is+non-trivial+property&aqs=chrome..69i57.5682j0j7&sourceid=chrome&ie=UTF-8
+
+---- When to use Rice Theorem
+https://www.youtube.com/watch?v=kr7n_3LpWhc

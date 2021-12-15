@@ -43,11 +43,6 @@ https://www.google.com/search?q=operational+semantics&sxsrf=AOaemvJFv1-iB6d6ptxR
 Operational semantics:
 https://en.wikipedia.org/wiki/Operational_semantics
 
-8.Rice Theorem
-https://courses.engr.illinois.edu/cs373/sp2013/Lectures/lec25.pdf
-https://www.youtube.com/watch?v=nP2phzkNzwE
-https://www.youtube.com/watch?v=kr7n_3LpWhc
-
 
 8. Knaster–Tarski theorem
 克纳斯特－塔斯基定理
@@ -61,5 +56,17 @@ https://en.wikipedia.org/wiki/Knaster%E2%80%93Tarski_theorem
 如果对于 L 的元素的递升序列的所有 xn 有 f(lim xn)=lim f(xn)，则 f 的最小不动点是 lim fn(0)，这里的 0 是 L 的最小元素，因此给出了这个定理的更有“建设性”的一个版本。
 更一般的说，如果 f 是单调函数，则 f 的最小不动点是 fα(0) 的固定极限
 例如，在理论计算机科学中，单调函数的最小不动点被用来定义程序语义。
-9.
+
+9.Rice Theorem
+https://courses.engr.illinois.edu/cs373/sp2013/Lectures/lec25.pdf
+https://www.youtube.com/watch?v=nP2phzkNzwE
+https://www.youtube.com/watch?v=kr7n_3LpWhc
+https://www.tutorialspoint.com/automata_theory/rice_theorem.htm
+
+使用 Rice theorem的两个条件（或者说，看到这两个条件，立马条件反射使用rice theorem）：
+1. Is it a turing machine language?
+2. Is it non-trival?
+
+
+10.
 

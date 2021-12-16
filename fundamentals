@@ -107,3 +107,6 @@ In mathematics, a directed set (or a directed preorder or a filtered set) is a n
 with the additional property that every pair of elements has an upper bound.[1] In other words, for any {\displaystyle a}a and {\displaystyle b}b in {\displaystyle A}
 A there must exist {\displaystyle c}c in {\displaystyle A}A with {\displaystyle a\leq c}{\displaystyle a\leq c} and {\displaystyle b\leq c.}{\displaystyle b\leq c.} 
 A directed set's preorder is called a direction.
+
+15. Directed set -> Scott Continuity -> Kleene fixed-point theorem
+

@@ -1,3 +1,5 @@
+
+
 1.Hoare Logic
 https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%B0%94%E9%80%BB%E8%BE%91
 霍尔逻辑的中心特征是霍尔三元组（Hoare triple）。这种三元组描述一段代码的执行如何改变计算的状态。Hoare三元组有如下形式
@@ -87,4 +89,10 @@ Important results in this area are Kleene's fixed-point theorem and the Knaster-
 
 12. Proving Rice's theorem using Kleene's fixed point theorem
 https://math.stackexchange.com/questions/3781364/proving-rices-theorem-using-kleenes-fixed-point-theorem
+
+13. Kleene Fixed-Point Theorem
+在数学中，序理论的 Kleene 不动点定理指出给定任何完全格 L 和任何具有斯科特连续性的函数
+{\displaystyle f:L\to L,}f:L\to L,
+{\displaystyle f}f的最小不动点{\displaystyle fix(f)}{\displaystyle fix(f)}存在，
+如果我们用{\displaystyle \bot }\bot 来表示L内的最小元素，那么{\displaystyle fix(f)=\bigsqcup _{i\geq 0}f^{i}(\bot )}{\displaystyle fix(f)=\bigsqcup _{i\geq 0}f^{i}(\bot )}
 

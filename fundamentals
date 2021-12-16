@@ -96,3 +96,14 @@ https://math.stackexchange.com/questions/3781364/proving-rices-theorem-using-kle
 {\displaystyle f}f的最小不动点{\displaystyle fix(f)}{\displaystyle fix(f)}存在，
 如果我们用{\displaystyle \bot }\bot 来表示L内的最小元素，那么{\displaystyle fix(f)=\bigsqcup _{i\geq 0}f^{i}(\bot )}{\displaystyle fix(f)=\bigsqcup _{i\geq 0}f^{i}(\bot )}
 
+14. Directed set
+Directed set
+https://en.wikipedia.org/wiki/Directed_set
+ In other words, for any a and b in A there must exist c in A with a <=c and b<=c
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+In mathematics, a directed set (or a directed preorder or a filtered set) is a nonempty set
+{\displaystyle A}A together with a reflexive and transitive binary relation {\displaystyle \,\leq \,}{\displaystyle \,\leq \,} (that is, a preorder), 
+with the additional property that every pair of elements has an upper bound.[1] In other words, for any {\displaystyle a}a and {\displaystyle b}b in {\displaystyle A}
+A there must exist {\displaystyle c}c in {\displaystyle A}A with {\displaystyle a\leq c}{\displaystyle a\leq c} and {\displaystyle b\leq c.}{\displaystyle b\leq c.} 
+A directed set's preorder is called a direction.

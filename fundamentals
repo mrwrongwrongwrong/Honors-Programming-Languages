@@ -68,5 +68,12 @@ https://www.tutorialspoint.com/automata_theory/rice_theorem.htm
 2. Is it non-trival?
 
 
-10.
+10. Kleene Fixed-Point Theorem
+Kleene Fixed-Point Theorem. Suppose {\displaystyle (L,\sqsubseteq )}{\displaystyle (L,\sqsubseteq )} is a directed-complete partial order (dcpo) with a least element, and let {\displaystyle f:L\to L}{\displaystyle f:L\to L} be a Scott-continuous (and therefore monotone) function. Then {\displaystyle f}f has a least fixed point, which is the supremum of the ascending Kleene chain of {\displaystyle f.}f.
+The ascending Kleene chain of f is the chain
+
+{\displaystyle \bot \sqsubseteq f(\bot )\sqsubseteq f(f(\bot ))\sqsubseteq \cdots \sqsubseteq f^{n}(\bot )\sqsubseteq \cdots }{\displaystyle \bot \sqsubseteq f(\bot )\sqsubseteq f(f(\bot ))\sqsubseteq \cdots \sqsubseteq f^{n}(\bot )\sqsubseteq \cdots }
+obtained by iterating f on the least element ⊥ of L. Expressed in a formula, the theorem states that
+
+{\displaystyle {\textrm {lfp}}(f)=\sup \left(\left\{f^{n}(\bot )\mid n\in \mathbb {N} \right\}\right)}{\textrm  {lfp}}(f)=\sup \left(\left\{f^{n}(\bot )\mid n\in {\mathbb  {N}}\right\}\right)
 

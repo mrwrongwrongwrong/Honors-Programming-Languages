@@ -8,6 +8,7 @@ lfp引申的定义是 值域中很多个f的并集。（join of f）
 gfp(greatest fix-point)的定义是，定义域中很多个x的并集。（join of x）
 
 join就是加法，把很多个合并到一起，在lattice里面是往上走。
+meet是减法，只取共同的部分，多余的部分都舍弃，在lattice里面是往下走。
 
 1.closure 闭包
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures

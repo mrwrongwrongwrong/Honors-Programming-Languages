@@ -1,7 +1,7 @@
 
 
 看到 complete lattice + increasing function 请直接apply tarski theorem： lfp（least fix-point exists）
-
+看到 complete lattice + scott continuous，请直接apply kleene theorem: lfp exists
 
 1.closure 闭包
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures

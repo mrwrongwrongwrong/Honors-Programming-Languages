@@ -59,3 +59,9 @@ expresses that there is something in the domain which satisfies that property.
 ---Parametric Polymorphism 
 
 Using parametric polymorphism, a function or a data type can be written generically so that it can handle values identically without depending on their type
+
+---Algorithm W
+the input is a context and an expression, the output is a substitution sigma.
+The sigma can take another context and expression, hence, infer the output type.
+The reason why we dont directly get the output type is that the direct inference is for monomorphic, it is not for parametric polymorphic. 
+Hence, in order to achieve the goal of polymorphic, we have to use the "intermedia" substitution. Hence, algo W it is.

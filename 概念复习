@@ -5,6 +5,7 @@
 
 lfp的定义是 定义域中的很多个x的交集。(meet of x)
 lfp引申的定义是 值域中很多个f的并集。（join of f）
+gfp(greatest fix-point)的定义是，定义域中很多个x的并集。（join of x）
 
 1.closure 闭包
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures

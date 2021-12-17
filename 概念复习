@@ -3,6 +3,8 @@
 看到 complete lattice + increasing function 请直接apply tarski theorem： lfp（least fix-point exists）
 看到 complete lattice + scott continuous，请直接apply kleene theorem: lfp exists
 
+lfp的定义是 定义域中的很多个x的交集。(meet of x)
+
 1.closure 闭包
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures
 

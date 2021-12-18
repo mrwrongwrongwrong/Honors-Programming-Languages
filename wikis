@@ -1,6 +1,7 @@
 
 lfp:
 https://en.wikipedia.org/wiki/Least_fixed_point
+https://zh.wikipedia.org/wiki/%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%AE%9A%E7%90%86
 
 Type rule:
 https://en.wikipedia.org/wiki/Type_rule
@@ -20,6 +21,7 @@ https://en.wikipedia.org/wiki/Static_program_analysis
 
 Operational Semantics:
 https://en.wikipedia.org/wiki/Operational_semantics
+https://www.google.com/search?q=operational+semantics&sxsrf=AOaemvJFv1-iB6d6ptxRg7HlNrBCjEz1Fw:1639418675836&tbm=isch&source=iu&ictx=1&fir=9KECLOxKOcMiBM%252Ci35YKZRfKcRvzM%252C_%253BG9a1hUhQ65UMlM%252CNMtJ4ei6Lj26rM%252C_%253BbNxtkI6lra4jRM%252CP1U18LPv5p5e1M%252C_%253BJ74XNSFBzMTcDM%252CoP_X4Vj7d4lZbM%252C_%253BAs2lN5UdDro9XM%252CTmO2CixoZYuwiM%252C_%253BNBwj2-aIwGEwLM%252CHQPNgiAtyn870M%252C_&vet=1&usg=AI4_-kRn9emR_MaeZH_UOHTi4QfMZ46DRg&sa=X&ved=2ahUKEwj8pr6-ruH0AhUQlYkEHS7PDJcQ_h16BAgREAE#imgrc=9KECLOxKOcMiBM
 
 Rice Theorem:
 https://courses.engr.illinois.edu/cs373/sp2013/Lectures/lec25.pdf
@@ -29,3 +31,21 @@ https://en.wikipedia.org/wiki/Parametric_polymorphism
 
 Kleene Fix-point Theorem:
 https://en.wikipedia.org/wiki/Kleene_fixed-point_theorem
+https://zh.wikipedia.org/wiki/%E5%85%8B%E8%8E%B1%E5%B0%BC%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%AE%9A%E7%90%86
+https://math.stackexchange.com/questions/4043913/intuition-behind-the-construction-of-a-fixed-point-from-kleenes-fixed-point-the
+
+Proving Rice theorem by Kleene:
+https://math.stackexchange.com/questions/3781364/proving-rices-theorem-using-kleenes-fixed-point-theorem
+
+Join and Meet:
+https://en.wikipedia.org/wiki/Join_and_meet
+
+Hindley-Milner Type:
+https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system
+
+Intuition behind the construction of a fixed point from Kleene's fixed point theorem
+https://math.stackexchange.com/questions/4043913/intuition-behind-the-construction-of-a-fixed-point-from-kleenes-fixed-point-the
+
+The substitution Model
+https://www.cs.cornell.edu/courses/cs3110/2015fa/l/13-semantics/core-ocaml.html
+

@@ -1,0 +1,84 @@
+;;; 0-based list-ref
+;;; top-level call (find-next seq lens ptrs index 0 1 -1)
+;;; lengths of lens and ptrs lists must be equal index!
+(define (find-next seq lens ptrs index index-inner the-len the-ptr)
+  (cond ((equal? index 0) '(1 -1))
+        ((equal? index index-inner) (list the-len the-ptr))      
+        (else (let* ((current (list-ref seq index))
+                     (inner (list-ref seq index-inner)) 
+                     (inner-len (list-ref lens index-inner))) ;; get current longest subsequence for index-inner
+                (cond ((and (>= current inner) (> (+ 1 inner-len) the-len))
+                           (find-next seq lens ptrs index (+ 1 index-inner) (+ 1 inner-len) index-inner)) ;; found a longer subseq
+                      (else (find-next seq lens ptrs index (+ 1 index-inner) the-len the-ptr)))
+                )
+              )
+        )
+  )
+
+;; top-level call (find-seq seq '() '() 0)
+(define (find-seq seq lens ptrs index)
+  (if (equal? (length seq) index)
+      (list lens ptrs)
+      (let* ((tuple (find-next seq lens ptrs index 0 1 -1))
+             (new-len (car tuple))
+             (new-ptr (cadr tuple))
+             (new-lens (append lens (list new-len)))
+             (new-ptrs (append ptrs (list new-ptr))))
+        (find-seq seq new-lens new-ptrs (+ 1 index)))))
+
+;; extract subseq starting from start index of max seq
+(define (extract-seq seq ptrs start acc)
+  (if (equal? start -1) acc
+      (extract-seq seq ptrs (list-ref ptrs start) (cons (list-ref seq start) acc))))
+
+;;
+(define (find-max-index lens max index)
+  (cond ((null? lens) (cadr max))
+        (else (if (> (car lens) (car max))
+                  (find-max-index (cdr lens) (list (car lens) index) (+ 1 index))
+                  (find-max-index (cdr lens) max (+ 1 index))))))
+
+(define (lis_fast seq)
+  (let* ((tuple (find-seq seq '() '() 0))
+         (lens (car tuple))
+         (ptrs (cadr tuple))
+         (start (find-max-index lens '(1 0) 0))
+         )
+    (if (null? seq)
+        seq
+        (extract-seq seq ptrs start '()))))
+
+
+;;; lis slow:
+
+(define lis_slow (lambda (l)
+  (find (length l) l)))
+
+(define find (lambda (n l)
+    (if (= n 0)
+        '()
+        (let ((sub (sublists n l)))
+            (cond ((null? sub) (find (- n 1) l))
+                  ((null? (find_increasing sub)) (find (- n 1) l))
+                  (else (car (find_increasing sub))))))))
+
+(define sublists (lambda (n l)
+    (cond
+        ((< n 1) '())
+        ((null? l) '())
+        ((> n (length l)) '())
+        ((= n 1) (map (lambda (e) (list e)) l))
+        (else (append
+            (sublists n (cdr l))
+            (map (lambda (e) (cons (car l) e))
+                (sublists (- n 1) (cdr l))))))))
+
+(define (find_increasing sub)
+  (if (null? sub) '()
+      (if (increasing? (car sub)) (list (car sub)) (find_increasing (cdr sub)))))
+
+(define (increasing? l)
+  (cond ((null? l) #t) ;; zero element list, shouldn't get there
+        ((null? (cdr l)) #t) ;; one element list
+        ((<= (car l) (cadr l)) (increasing? (cdr l)))
+        (else #f)))

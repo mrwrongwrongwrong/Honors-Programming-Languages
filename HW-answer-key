@@ -1,0 +1,25 @@
+HW7
+No
+12:22
+Let me write the full correct answer here... (But it is tricky, I didn't even mark it down in Program analysis.)
+12:24
+interpret x -> x
+interpret \x.E -> \x.interpret(E)
+interpret E1 E2 -> let f <- weakhead(E1) in --- this is running the slide you just posted
+   case f of
+      \x.E3 -> interpret (E3[E2/x])
+      _ -> interpret(f) interpret(E2)
+
+
+
+
+
+12:24
+But what we can accept as right answer is this:
+interpret x -> x
+interpret \x.E -> \x.interpret(E)
+interpret (\x.E3) E2 -> interpret(E3[E2/x]) --- it is important that they check at least at the top level
+interpret E1 E2 -> let f <- interpret(E1) in --- or some variation of this case. they might have tried to get it right. As long as they checked, it's fine.
+   case f of
+      \x.E3 -> interpret (E3[E2/x])
+      _ -> f interpret(E2) (edited) 
